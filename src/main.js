@@ -1,14 +1,16 @@
-const string = `
+const styleText = `
 .skin *{box-sizing: border-box; margin: 0; padding: 0;}
 *::before, *::after{box-sizing: border-box;}
 body{
     background-color: #ffe600;
 }
+
 .skin{
     position: relative;
     height: 100vh;
     top: -45px;
 }
+
 .nose{
     border: 10px solid black;
     border-color:black transparent transparent;
@@ -177,53 +179,64 @@ body{
     border-radius: 50% 50% 50% 50%;
     background-color: red;
 }
-`
+`;
 
-let n = 1
-let time = 100
-pkchu.innerHTML = string.substring(0, n)
-text.innerText = string.substring(0, n)
+let textNum = 1;
+let time = 60;
+pkchu.innerHTML = styleText.substring(0, textNum);
+text.innerText = styleText.substring(0, textNum);
 
 const run = () => {
-    if (n >= string.length) {
-        window.clearInterval(id)
-        return
-    }
-    n += 1
-    pkchu.innerHTML = string.substring(0, n)
-    text.innerText = string.substring(0, n)
-    text.scrollTop = text.scrollHeight
-}
+  if (textNum >= styleText.length) {
+    window.clearInterval(player);
+    return;
+  }
+  textNum += 1;
+  pkchu.innerHTML = styleText.substring(0, textNum);
+  text.innerText = styleText.substring(0, textNum);
+  text.scrollTop = text.scrollHeight;
+};
 
 const play = () => {
-    return setInterval(run, time)
-}
+  return setInterval(run, time);
+};
 
 const pause = () => {
-    window.clearInterval(id)
-}
+  window.clearInterval(player);
+};
 
-let id = setInterval(run, time)
+let player = setInterval(run, time);
 
-buttonPau.onclick = () => {
-    pause()
-}
+document.getElementById("pause").onclick = () => {
+  pause();
+};
 
-buttonPlay.onclick = () => {
-    id = play()
-}
-buttonSlow.onclick = () => {
-    pause()
-    time = 200
-    id = play()
-}
-buttonNormal.onclick = () => {
-    pause()
-    time = 50
-    id = play()
-}
-buttonFast.onclick = () => {
-    pause()
-    time = 0
-    id = play()
-}
+document.getElementById("play").onclick = () => {
+  player = play();
+};
+
+document.getElementById("low").onclick = () => {
+  pause();
+  time = 200;
+  player = play();
+};
+
+document.getElementById("middle").onclick = () => {
+  pause();
+  time = 60;
+  player = play();
+};
+
+document.getElementById("high").onclick = () => {
+  pause();
+  time = 20;
+  player = play();
+};
+
+document.getElementById("reset").onclick = () => {
+  pause();
+  textNum = 1;
+  pkchu.innerHTML = "";
+  text.innerText = "";
+  player = play();
+};

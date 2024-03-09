@@ -1,82 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>动态绘制皮卡丘</title>
-</head>
-<body>
-<style id="pkchu"></style>
-<div id="text"></div>
-<div id="buttons">
-    <button id="buttonPau">暂停</button>
-    <button id="buttonPlay">播放</button>
-    <button id="buttonSlow">低速</button>
-    <button id="buttonNormal">中速</button>
-    <button id="buttonFast">高速</button>
-</div>
-<style>
-    #buttons {
-        position: fixed;
-        right: 10px;
-        top: 10px;
-        display: flex;
-        flex-direction: column;
-        margin-right: 10px;
-        margin-top: 10px;
-    }
-
-    #buttons > button {
-        margin-bottom: 10px;
-    }
-
-    #pkchu {
-        display: none;
-    }
-
-    #text {
-        position: fixed;
-        height: 50vh;
-        width: 100%;
-        top: 0;
-        overflow-x: hidden;
-    }
-
-    #text::-webkit-scrollbar {
-        width: 0 !important
-    }
-
-    #html {
-        position: fixed;
-        height: 50vh;
-        bottom: 0;
-        width: 100%;
-    }
-</style>
-<div id="html">
-    <div class="skin">
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="nose">
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- pikachu样式 -->
+    <style id="pkchu"></style>
+    <!-- 样式文本 -->
+    <div id="app">
+      <div id="text"></div>
+      <!-- 功能按键 -->
+      <div class="buttons">
+        <el-button style="display: none"></el-button>
+        <el-button type="danger" id="pause">暂停</el-button>
+        <el-button type="success" id="play">播放</el-button>
+        <el-button type="info" id="low">低速</el-button>
+        <el-button type="info" id="middle">中速</el-button>
+        <el-button type="info" id="high">高速</el-button>
+        <el-button type="primary" id="reset">重新开始</el-button>
+      </div>
+      <div id="html">
+        <div class="skin">
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="nose">
             <div class="nose-top"></div>
-        </div>
-        <div class="mouth">
+          </div>
+          <div class="mouth">
             <div class="mouth-top">
-                <div class="lip left"></div>
-                <div class="lip right"></div>
+              <div class="lip left"></div>
+              <div class="lip right"></div>
             </div>
             <div class="mouth-bottom">
-                <div class="yuan1">
-                    <div class="yuan2"></div>
-                </div>
+              <div class="yuan1">
+                <div class="yuan2"></div>
+              </div>
             </div>
+          </div>
+          <div class="face left"></div>
+          <div class="face right"></div>
         </div>
-        <div class="face left"></div>
-        <div class="face right"></div>
+      </div>
+      <div class="pikachu">
+        <div class="head-container">
+          <div class="left ear"></div>
+          <div class="right ear"></div>
+
+          <div class="head">
+            <div class="face">
+              <div class="eyes-container">
+                <div class="left eye"></div>
+                <div class="right eye"></div>
+              </div>
+
+              <div class="nose-container">
+                <div class="nose"></div>
+              </div>
+
+              <div class="mouth-container">
+                <div class="mouth"></div>
+              </div>
+
+              <div class="cheek-container">
+                <div class="left cheek"></div>
+                <div class="right cheek"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body-container">
+          <div class="body"></div>
+        </div>
+        <div class="feet-container">
+          <div class="left feet"></div>
+          <div class="right feet"></div>
+        </div>
+        <div class="hand-container">
+          <div class="left hand"></div>
+          <div class="right hand"></div>
+        </div>
+        <div class="tail-container">
+          <div class="tail"></div>
+        </div>
+      </div>
     </div>
-</div>
-<script src="main.js"></script>
-</body>
+  </body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: function () {
+        return {};
+      },
+    });
+  </script>
+  <script src="main.js"></script>
 </html>
