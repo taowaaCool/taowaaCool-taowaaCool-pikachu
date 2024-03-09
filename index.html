@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <!-- pikachu样式 -->
@@ -30,6 +30,7 @@
         <el-button type="info" id="middle">中速</el-button>
         <el-button type="info" id="high">高速</el-button>
         <el-button type="primary" id="reset">重新开始</el-button>
+        <el-button type="success" id="all">显示全部</el-button>
       </div>
       <div id="html">
         <div class="skin">
@@ -53,48 +54,6 @@
           <div class="face right"></div>
         </div>
       </div>
-      <div class="pikachu">
-        <div class="head-container">
-          <div class="left ear"></div>
-          <div class="right ear"></div>
-
-          <div class="head">
-            <div class="face">
-              <div class="eyes-container">
-                <div class="left eye"></div>
-                <div class="right eye"></div>
-              </div>
-
-              <div class="nose-container">
-                <div class="nose"></div>
-              </div>
-
-              <div class="mouth-container">
-                <div class="mouth"></div>
-              </div>
-
-              <div class="cheek-container">
-                <div class="left cheek"></div>
-                <div class="right cheek"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="body-container">
-          <div class="body"></div>
-        </div>
-        <div class="feet-container">
-          <div class="left feet"></div>
-          <div class="right feet"></div>
-        </div>
-        <div class="hand-container">
-          <div class="left hand"></div>
-          <div class="right hand"></div>
-        </div>
-        <div class="tail-container">
-          <div class="tail"></div>
-        </div>
-      </div>
     </div>
   </body>
   <!-- import Vue before Element -->
@@ -109,5 +68,5 @@
       },
     });
   </script>
-  <script src="main.js"></script>
+  <script src="src/main.js"></script>
 </html>

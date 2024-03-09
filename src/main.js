@@ -240,3 +240,11 @@ document.getElementById("reset").onclick = () => {
   text.innerText = "";
   player = play();
 };
+
+document.getElementById("all").onclick = () => {
+  pause();
+  textNum = styleText.length;
+  pkchu.innerHTML = styleText;
+  text.innerText = styleText;
+  player = play();
+};
